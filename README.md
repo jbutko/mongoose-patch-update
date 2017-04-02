@@ -40,12 +40,12 @@ const ObjectId = mongoose.Types.ObjectId;
 const User = require('./user.model.js'); // model
 
 let query = { _id: ObjectId(req.params.userId) }; // find query
-let updateParams = { username: 'johndoe-123' }; // update parameters
-let protectedKeys = ['password', 'contact']; // protected keys - these keys won't be allowed to update
+let updateParams = { username: 'johndoe-123', email: 'john123@doe.com' }; // update parameters - only `username` will be updated, `email` is protected
+let protectedKeys = ['email']; // protected keys - given keys won't be allowed to be updated
 let selectedKeys = ''; // which keys will be returned after successful update - all keys will be returned
 
-/*
 // user before update
+/*
 let user = {
   username: 'johndoe',
   firstname: 'John',
@@ -62,8 +62,8 @@ User
     selectedKeys
   )
   .then((updatedUser) => {
-    /*
     // user after update
+    /*
     let user = {
       username: 'johndoe-123',
       firstname: 'John',
@@ -87,12 +87,12 @@ const ObjectId = mongoose.Types.ObjectId;
 const User = require('./user.model.js'); // model
 
 let query = { _id: ObjectId(req.params.userId) }; // find query
-let updateParams = { username: 'johndoe-123' }; // update parameters
-let protectedKeys = ['password', 'contact']; // protected keys - these keys won't be allowed to update
+let updateParams = { username: 'johndoe-123', email: 'john123@doe.com' }; // update parameters - only `username` will be updated, `email` is protected
+let protectedKeys = ['email']; // protected keys - given keys won't be allowed to be updated
 let selectedKeys = ''; // which keys will be returned after successful update - all keys will be returned
 
-/*
 // user before update
+/*
 let user = {
   username: 'johndoe',
   firstname: 'John',
@@ -109,8 +109,9 @@ User
     selectedKeys,
   (err, updatedUser) => {
     if (err) return next(err);
-    /*
+
     // user after update
+    /*
     let user = {
       username: 'johndoe-123',
       firstname: 'John',
