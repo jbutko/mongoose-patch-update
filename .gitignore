@@ -1,0 +1,13 @@
+test/
+
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+log
+logs
+node_modules

@@ -1,0 +1,16 @@
+{
+  "name": "mongoose-patch-update",
+  "version": "1.0.0",
+  "description": "Mongoose plugin for model update in patch like style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongoose",
+    "mongodb",
+    "model"
+  ],
+  "author": "jozef butko <jbutko@gmail.com> (www.jozefbutko.com)",
+  "license": "MIT"
+}
