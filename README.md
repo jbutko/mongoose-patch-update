@@ -8,7 +8,7 @@ mongoose-patch-update plugin is simple mongoose plugin that enables model update
 npm install mongoose-patch-update --save
 ```
 
-You can use this plugin with specific schema or globally for all schemas.
+You can use this plugin with specific schema or globally for all schemas.<br />
 To use it with specific schema:
 ```javascript
 const mongoosePatchUpdate = require('mongoose-patch-update');
@@ -31,7 +31,7 @@ After attaching mongoose-patch-update plugin you will have `Model.patchUpdate(..
 
 ## Usage
 
-Mongoose patch update plugin provides support for both callback style queries as well ass promise style queries.
+Mongoose patch update plugin provides support for both callback style queries as well as promise style queries.
 
 ### Promise example
 ```javascript
@@ -40,9 +40,10 @@ const ObjectId = mongoose.Types.ObjectId;
 const User = require('./user.model.js'); // model
 
 let query = { _id: ObjectId(req.params.userId) }; // find query
-let updateParams = req.body; // what to update
-let protectedKeys = ['password', 'contact']; // these keys won't be updatable
-let selectedKeys = ['password', 'contact']; // which keys will be returned after successful update
+let updateParams = req.body; // update parameters
+let protectedKeys = ['password', 'contact']; // protected keys - these keys won't be allowed to update
+let selectedKeys = ''; // which keys will be returned after successful update - all keys will be returned
+
 User
   .patchUpdate(
     query,
@@ -66,9 +67,10 @@ const ObjectId = mongoose.Types.ObjectId;
 const User = require('./user.model.js'); // model
 
 let query = { _id: ObjectId(req.params.userId) }; // find query
-let updateParams = req.body; // what to update
-let protectedKeys = ['password', 'contact']; // these keys won't be updatable
-let selectedKeys = ['password', 'contact']; // which keys will be returned after successful update
+let updateParams = req.body; // update parameters
+let protectedKeys = ['password', 'contact']; // protected keys - these keys won't be allowed to update
+let selectedKeys = ''; // which keys will be returned after successful update - all keys will be returned
+
 User
   .patchUpdate(
     query,
