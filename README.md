@@ -1,7 +1,7 @@
 Mongoose Patch Update Plugin
 =========
 
-mongoose-patch-update plugin is simple mongoose plugin that enables model updates in PATCH like style - only what you send in body params will be updated.
+*mongoose-patch-update* plugin is simple mongoose plugin that enables model updates in PATCH like style - only what you send in body params will be updated. You can set protected keys which won't be updatable.
 
 ## Installation
 ```
@@ -31,7 +31,7 @@ After attaching mongoose-patch-update plugin you will have `Model.patchUpdate(..
 
 ## Usage
 
-Mongoose patch update plugin provides support for both callback style queries as well as promise style queries.
+*Mongoose patch update* plugin provides support for both promise style queries as well as callback style queries.
 
 ### Promise example
 ```javascript
