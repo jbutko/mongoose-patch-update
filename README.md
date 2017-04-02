@@ -40,9 +40,19 @@ const ObjectId = mongoose.Types.ObjectId;
 const User = require('./user.model.js'); // model
 
 let query = { _id: ObjectId(req.params.userId) }; // find query
-let updateParams = req.body; // update parameters
+let updateParams = { username: 'johndoe-123' }; // update parameters
 let protectedKeys = ['password', 'contact']; // protected keys - these keys won't be allowed to update
 let selectedKeys = ''; // which keys will be returned after successful update - all keys will be returned
+
+/*
+// user before update
+let user = {
+  username: 'johndoe',
+  firstname: 'John',
+  surname: 'Doe',
+  email: 'john@doe.com'
+};
+ */
 
 User
   .patchUpdate(
@@ -52,6 +62,16 @@ User
     selectedKeys
   )
   .then((updatedUser) => {
+    /*
+    // user after update
+    let user = {
+      username: 'johndoe-123',
+      firstname: 'John',
+      surname: 'Doe',
+      email: 'john@doe.com'
+    };
+     */
+
     res.status(200).json(updatedUser);
   })
   .catch((err) => {
@@ -67,9 +87,19 @@ const ObjectId = mongoose.Types.ObjectId;
 const User = require('./user.model.js'); // model
 
 let query = { _id: ObjectId(req.params.userId) }; // find query
-let updateParams = req.body; // update parameters
+let updateParams = { username: 'johndoe-123' }; // update parameters
 let protectedKeys = ['password', 'contact']; // protected keys - these keys won't be allowed to update
 let selectedKeys = ''; // which keys will be returned after successful update - all keys will be returned
+
+/*
+// user before update
+let user = {
+  username: 'johndoe',
+  firstname: 'John',
+  surname: 'Doe',
+  email: 'john@doe.com'
+};
+ */
 
 User
   .patchUpdate(
@@ -79,6 +109,16 @@ User
     selectedKeys,
   (err, updatedUser) => {
     if (err) return next(err);
+    /*
+    // user after update
+    let user = {
+      username: 'johndoe-123',
+      firstname: 'John',
+      surname: 'Doe',
+      email: 'john@doe.com'
+    };
+     */
+
     res.status(200).json(updatedUser);
   });
 
@@ -86,12 +126,16 @@ User
 
 ## License
 
-The MIT License
+DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+Version 2, December 2004
 
-Copyright (c) 2017 Jozef Butko <jbutko@gmail.com>
+Copyright (C) 2017 Jozef Butko <jbutko@gmail.com>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+0. You just DO WHAT THE FUCK YOU WANT TO.

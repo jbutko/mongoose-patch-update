@@ -1,7 +1,7 @@
 /*
  * Mongoose model update in patch like fashion
  * Copyright(c)2017 Jozef Butko <jbutko@gmail.com>
- * MIT License
+ * WTFPL License
  */
 
 'use strict';
