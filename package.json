@@ -7,10 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "mongo",
     "mongoose",
     "mongodb",
-    "model"
+    "model",
+    "update",
+    "patch",
+    "patch update"
   ],
   "author": "jozef butko <jbutko@gmail.com> (www.jozefbutko.com)",
-  "license": "WTFPL"
+  "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbutko/mongoose-patch-update.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jbutko/mongoose-patch-update/issues"
+  },
+  "homepage": "https://github.com/jbutko/mongoose-patch-update#mongoose-patch-update-plugin"
 }
