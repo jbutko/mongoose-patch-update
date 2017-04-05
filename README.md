@@ -3,7 +3,7 @@ Mongoose Patch Update Plugin
 
 [![NPM](https://nodei.co/npm/mongoose-patch-update.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/mongoose-patch-update/)
 
-*mongoose-patch-update* plugin is simple [mongoose][mongoose] plugin that enables model updates in PATCH like style - only what you send in body params will be updated. You can set protected keys which won't be updatable.
+*mongoose-patch-update* plugin is simple [mongoose](mongoose.com) plugin that enables model updates in PATCH like style - only what you send in body params will be updated. You can set protected keys which won't be updatable.
 
 ## Installation
 ```
