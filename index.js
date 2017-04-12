@@ -27,7 +27,7 @@ module.exports = function(schema) {
         if (!modelInstance) throw new Error('instanceNotFound');
 
         for (var attribute in updateData) {
-          let isProtectedKey = protectedKeys.includes(attribute);
+          let isProtectedKey = protectedKeys.indexOf(attribute) > -1;
           let keyIsArray = Array.isArray(updateData[attribute]);
           let isObjectWithKeys = typeof modelInstance[attribute] == 'object' && !keyIsArray && Object.keys(modelInstance[attribute]).length;
 
@@ -38,7 +38,7 @@ module.exports = function(schema) {
             modelInstance[attribute] = updateData[attribute];
           else if (isNestedKey) {
             for (let nestedAttribute in updateData[attribute]) {
-              let isProtectedNestedKey = protectedKeys.includes(`${attribute}.${nestedAttribute}`);
+              let isProtectedNestedKey = protectedKeys.indexOf(`${attribute}.${nestedAttribute}`) > -1;
               if (!isProtectedNestedKey)
                 modelInstance[attribute][nestedAttribute] = updateData[attribute][nestedAttribute];
             }
