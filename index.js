@@ -31,8 +31,8 @@ module.exports = function(schema) {
           let keyIsArray = Array.isArray(updateData[attribute]);
           let isObjectWithKeys = typeof modelInstance[attribute] == 'object' && !keyIsArray && Object.keys(modelInstance[attribute]).length;
 
-          let keyIsUpdatable = updateData.hasOwnProperty(attribute) && attribute !== '_id' && !isProtectedKey && !isObjectWithKeys;
-          let isNestedKey = updateData.hasOwnProperty(attribute) && attribute !== '_id' && !isProtectedKey && isObjectWithKeys;
+          let keyIsUpdatable = Object.prototype.hasOwnProperty.call(updateData, attribute) && attribute !== '_id' && !isProtectedKey && !isObjectWithKeys;
+          let isNestedKey = Object.prototype.hasOwnProperty.call(updateData, attribute) && attribute !== '_id' && !isProtectedKey && isObjectWithKeys;
 
           if (keyIsUpdatable)
             modelInstance[attribute] = updateData[attribute];
